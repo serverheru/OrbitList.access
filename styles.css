@@ -1,0 +1,324 @@
+/* Variables & Reset */
+:root {
+    --primary: #818cf8; /* Indigo SaaS modern */
+    --primary-hover: #6366f1;
+    --dark: #ffffff; /* Teks heading menjadi putih di dark mode */
+    --text: #cbd5e1; /* Teks paragraf abu-abu kebiruan terang */
+    --light: rgba(255, 255, 255, 0.05);
+    --white: rgba(15, 17, 35, 0.6); /* Background card dibuat transparan gelap */
+    --border: rgba(255, 255, 255, 0.1);
+    --radius: 16px;
+    --shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Membuat klik tombol anchor scroll ke bawah dengan mulus */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background-color: #070616;
+    /* Membuat efek luar angkasa bertabur bintang */
+    background-image:
+        radial-gradient(1.5px 1.5px at 25px 25px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 150px 100px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 300px 50px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1.5px 1.5px at 200px 250px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 350px 300px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 50px 350px, rgba(255,255,255,0.8), transparent),
+        linear-gradient(to bottom right, #05050f, #161033, #09122b);
+    background-size: 400px 400px, 400px 400px, 400px 400px, 400px 400px, 400px 400px, 400px 400px, 100% 100%;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Typography & Utility Classes */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-copy { max-width: 700px; }
+.mb-loose { margin-bottom: 2rem; }
+.mb-tight { margin-bottom: 1rem; }
+.justify-center { justify-content: center; }
+.bg-light { background-color: var(--light); }
+
+.section { padding: 5rem 0; }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--dark);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0; /* Diperkecil agar header tidak memakan tempat */
+    position: sticky;
+    top: 0;
+    background: rgba(7, 6, 22, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--dark);
+}
+
+.app-icon {
+    border-radius: 22%; /* Membuat sudutnya melengkung halus seperti ikon aplikasi asli tanpa memotong logo */
+    object-fit: cover;
+}
+
+.navbar .app-icon {
+    width: 48px; /* Ikon di Header dibuat pas agar header tidak membesar */
+    height: 48px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 6rem 0 4rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.microcopy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6); /* Dibuat lebih terang agar terbaca di dark mode */
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.app-screenshot {
+    border-radius: 24px;
+    box-shadow: 0 10px 50px rgba(129, 140, 248, 0.25);
+    border: 1px solid var(--border);
+    animation: float 6s ease-in-out infinite;
+    max-height: 500px; /* Mencegah gambar terlalu raksasa jika portrait */
+    margin: 0 auto;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Problem Section */
+.problem p {
+    font-size: 1.1rem;
+}
+
+/* Cards Grid */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Disesuaikan untuk mobile */
+    gap: 2rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Disesuaikan untuk mobile */
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px); /* Efek kaca / glassmorphism */
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 1.5rem 0.5rem;
+}
+
+.benefit-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+.icon-wrapper {
+    font-size: 6rem; /* Membesarkan ikon 2x lipat */
+    margin: 0 auto 1.5rem auto;
+    background: transparent; /* Menghapus kotak background */
+    border: none; /* Menghapus garis pinggir */
+    width: 160px; /* Menggandakan lebar */
+    height: 160px; /* Menggandakan tinggi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary); /* Mengubah icon external menjadi indigo/warna primer */
+}
+
+/* Gallery Images */
+.gallery-img {
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(129, 140, 248, 0.15);
+    border: 1px solid var(--border);
+    margin: 0 auto;
+    max-height: 450px; /* Mencegah gambar galeri menjadi raksasa di layar */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Developer Profile Avatar */
+.dev-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-shadow: 0 10px 25px rgba(129, 140, 248, 0.3);
+    display: block;
+}
+
+/* Footer */
+.footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+}
+
+.footer .app-icon {
+    width: 112px; /* Ikon super besar khusus di area Footer */
+    height: 112px;
+}
+
+/* Scroll Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-cta { align-items: center; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .section { padding: 3.5rem 0; } /* Padding yang lebih rapih untuk hp */
+}
