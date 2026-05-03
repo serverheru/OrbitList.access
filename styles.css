@@ -316,9 +316,30 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-container { flex-direction: column; text-align: center; }
-    .hero-cta { align-items: center; }
+    .hero { padding: 3rem 0 2rem; }
+    .hero-container { flex-direction: column; text-align: center; gap: 2rem; }
+    .hero-cta { align-items: center; width: 100%; }
+    .hero-cta .btn { width: 100%; justify-content: center; }
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
-    .section { padding: 3.5rem 0; } /* Padding yang lebih rapih untuk hp */
+    .section { padding: 3rem 0; }
+    .navbar .btn { padding: 8px 16px; font-size: 0.9rem; }
+    .logo { font-size: 1.1rem; }
+    .grid-3, .grid-2 { gap: 1.5rem; }
+    .card { padding: 1.5rem; }
+    .icon-wrapper {
+        width: 100px;
+        height: 100px;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    .footer .app-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .final-cta .btn-large {
+        width: 100%;
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
 }
