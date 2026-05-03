@@ -318,8 +318,11 @@ img {
 @media (max-width: 768px) {
     .hero { padding: 3rem 0 2rem; }
     .hero-container { flex-direction: column; text-align: center; gap: 2rem; }
-    .hero-cta { align-items: center; width: 100%; }
-    .hero-cta .btn { width: 100%; justify-content: center; }
+    .hero-cta { align-items: center; width: 100%;}
+    .hero-cta .btn {
+        width: 100%;
+        padding: 12px 20px; /* Disesuaikan agar tidak terlalu besar di HP */
+    }
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     .section { padding: 3rem 0; }
@@ -340,6 +343,22 @@ img {
     .final-cta .btn-large {
         width: 100%;
         font-size: 1rem;
-        padding: 14px 20px;
+        padding: 12px 20px; /* Disesuaikan agar tidak terlalu besar di HP */
+    }
+}
+
+/* Extra Responsive for very narrow screens */
+@media (max-width: 480px) {
+    .hero-cta .btn, .final-cta .btn-large {
+        font-size: 0.85rem; /* Ukuran font lebih kecil lagi untuk layar ramping */
+        padding: 8px 12px; /* Padding atas-bawah dikurangi agar tombol tidak tebal */
+        gap: 6px; /* Jarak antara ikon dan teks dirapatkan */
+    }
+    .final-cta .btn-large img {
+        width: 18px; height: 18px; /* Ukuran ikon MediaFire ikut disesuaikan */
+    }
+    .navbar .btn {
+        font-size: 0.8rem; /* Tombol navbar juga dirampingkan */
+        padding: 6px 12px;
     }
 }
