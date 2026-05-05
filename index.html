@@ -191,14 +191,19 @@
                 <button class="gallery-btn prev-btn" aria-label="Geser Kiri"><i class="ph ph-caret-left"></i></button>
                 
                 <div class="gallery-carousel" id="galleryCarousel">
+                    <!-- Gambar Utama -->
                     <img src="img/a.png" alt="OrbitList Screenshot 1" class="gallery-img">
-                    <img src="img/b.png" alt="OrbitList Screenshot 2" class="gallery-img">
-                    <img src="img/c.png" alt="OrbitList Screenshot 3" class="gallery-img">
-                    <img src="img/d.png" alt="OrbitList Screenshot 4" class="gallery-img">
-                    <img src="img/e.png" alt="OrbitList Screenshot 5" class="gallery-img">
-                    <img src="img/f.png" alt="OrbitList Screenshot 6" class="gallery-img">
-                    <img src="img/g.png" alt="OrbitList Screenshot 7" class="gallery-img">
-                    <img src="img/h.png" alt="OrbitList Screenshot 8" class="gallery-img">
+                    <img src="img/3.png" alt="OrbitList Screenshot 3" class="gallery-img">
+                    <img src="img/4.png" alt="OrbitList Screenshot 4" class="gallery-img">
+                    
+                    <!-- Screenshot A - H -->
+                    <img src="img/b.png" alt="OrbitList Screenshot 6" class="gallery-img"> 
+                    <img src="img/c.png" alt="OrbitList Screenshot 7" class="gallery-img">
+                    <img src="img/d.png" alt="OrbitList Screenshot 8" class="gallery-img">
+                    <img src="img/e.png" alt="OrbitList Screenshot 9" class="gallery-img">
+                    <img src="img/f.png" alt="OrbitList Screenshot 10" class="gallery-img">
+                    <img src="img/g.png" alt="OrbitList Screenshot 11" class="gallery-img">
+                    <img src="img/h.png" alt="OrbitList Screenshot 12" class="gallery-img">
                 </div>
 
                 <button class="gallery-btn next-btn" aria-label="Geser Kanan"><i class="ph ph-caret-right"></i></button>
@@ -216,7 +221,7 @@
                 <div class="card">
                     <img src="img/Profile.jpeg" alt="Lalu Hairul Umam" class="dev-avatar mb-tight mx-auto">
                     <h3>Lalu Hairul Umam</h3>
-                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">@serverheru <br> [Lombok NTB, Praya Barat]</p>
+                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">@serverheru <br> Lombok NTB, Praya Barat</p>
                     <p>Seorang mahasiswa Perpustakaan dan Sains Informasi, minat di bidang Software Engineer, Web/App Dev, Data Science, Data Analyst, dan Data Engineer.</p>
                 </div>
 
@@ -225,7 +230,7 @@
                     <img src="img/agency.png" alt="Heruvant Studio" class="agency-avatar mb-tight mx-auto">
                     <h3>Heruvant Studio</h3>
                     <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Ruang Eksperimen Indie</p>
-                    <p>Bukan perusahaan besar, hanya sebuah "laboratorium" kecil tempat saya belajar coding, bereksperimen, dan meracik aplikasi dari nol. Tujuannya simpel: membuat alat yang ringan, gratis, dan benar-benar berguna buat keseharian kita.</p>
+                    <p>Bukan perusahaan, hanya sebuah kamar kecil tempat belajar coding, bereksperimen, dan meracik aplikasi dari nol. Membuat alat yang ringan, gratis, dan benar-benar berguna buat keseharian kita.</p>
                 </div>
             </div>
             
@@ -246,15 +251,21 @@
             
             <!-- Tombol Full Release -->
             <div class="download-group" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <a href="#" class="btn btn-large btn-googleplay btn-soon">
+                    <i class="ph ph-google-play-logo" style="font-size: 1.5rem;"></i> Google Play (soon)
+                </a>
                 <a href="https://apkpure.com/id/" class="btn btn-large btn-apkpure" target="_blank" rel="noopener">
                     <i class="ph ph-android-logo" style="font-size: 1.5rem;"></i> Unduh via APKPure
                 </a>
                 <a href="https://id.uptodown.com/" class="btn btn-large btn-uptodown" target="_blank" rel="noopener">
                     <i class="ph ph-storefront" style="font-size: 1.5rem;"></i> Unduh via Uptodown
                 </a>
-                 <a href="https://github.com/serverheru/asset/releases/download/v1.0/OrbitList.1.0.apk" class="btn btn-large btn-github"
-                    target="_blank" rel="noopener">
-                    <i class="ph ph-github-logo" style="font-size: 1.5rem;"></i> Unduh via GitHub
+                                <a href="https://github.com/serverheru/asset/releases/download/v1.0/OrbitList.1.0.apk" class="btn btn-large btn-github"
+                                    target="_blank" rel="noopener">
+                                    <i class="ph ph-github-logo" style="font-size: 1.5rem;"></i> Unduh via GitHub
+                                </a>
+                <a href="https://www.mediafire.com/file/7xiz2irxqw647hz/OrbitList_1.0.apk/file" class="btn btn-large btn-mediafire" target="_blank" rel="noopener">
+                    <img src="https://cdn.simpleicons.org/mediafire/white" alt="MediaFire Logo" style="width: 24px; height: 24px;"> Unduh via MediaFire
                 </a>
             </div>
             <p class="microcopy mb-loose">Full Version (v1.0) • Ukuran: 12.99 MB</p>
@@ -262,10 +273,11 @@
             <!-- Tombol Versi Demo -->
             <div style="margin-top: 1rem;">
                 <a href="https://www.mediafire.com/file/9b2qwo3ach1iqhj/OrbitList.apk/file" class="btn btn-outline" target="_blank" rel="noopener" style="font-size: 0.9rem; padding: 8px 16px;">
-                    <img src="https://cdn.simpleicons.org/mediafire/white" alt="MediaFire Logo" style="width: 16px; height: 16px; opacity: 0.8;">
-                    Versi Demo (MediaFire)
+                    <!-- Logo MediaFire diganti dengan kode warna biru (#1289F8) -->
+                    <img src="https://cdn.simpleicons.org/mediafire/1289F8" alt="MediaFire Logo" style="width: 16px; height: 16px;">
+                    <span style="color: var(--text);">Versi Demo (MediaFire)</span>
                 </a>
-                <p class="microcopy" style="margin-top: 0.5rem;">Demo Version (v1.0) • Ukuran: 11.93 MB</p>
+                <p class="microcopy" style="margin-top: 0.5rem;">Demo Version • Ukuran: 11.93 MB</p>
             </div>
             
             <!-- Keterangan Aplikasi Gratis & Aman -->
