@@ -170,6 +170,15 @@ img {
 }
 .pulse-anim { animation: pulse-gold 2s infinite; }
 
+/* Click Badge Indicator */
+.click-badge {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
 
 /* Navbar */
 .navbar {

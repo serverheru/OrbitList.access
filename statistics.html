@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070616">
+    <title>Statistik Unduhan - OrbitList</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="stylesheet" href="styles.css?v=3.6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Load Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <img src="img/Iconapp.png" alt="OrbitList Icon" class="app-icon">
+                <span>OrbitList</span>
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline" style="padding: 8px 16px;">
+                    <i class="ph ph-house"></i> <span class="hide-mobile">Kembali</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section fade-in" style="padding-top: 3rem; min-height: 80vh;">
+        <div class="container text-center">
+            <h2 class="mb-tight" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                <i class="ph ph-chart-bar" style="color: var(--primary);"></i> Dashboard Analitik
+            </h2>
+            <p class="max-w-copy mx-auto mb-loose">Statistik klik tombol unduhan Anda secara komprehensif. Data direkam menggunakan <span style="color: var(--primary); font-weight: bold;">Local Storage</span> (tersimpan statis di browser).</p>
+
+            <!-- Ringkasan Statistik -->
+            <div class="grid-2 mx-auto mb-loose" style="max-width: 800px; gap: 2rem;">
+                <div class="card">
+                    <h3 style="color: var(--text); font-size: 1rem; font-weight: 500;">Total Semua Unduhan</h3>
+                    <div id="stat-total" style="font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1.2;">0</div>
+                    <p class="microcopy">Klik secara keseluruhan</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--text); font-size: 1rem; font-weight: 500;">Platform Paling Banyak Diklik</h3>
+                    <div id="stat-favorite" style="font-size: 2rem; font-weight: 700; color: var(--dark); line-height: 1.2; margin-top: 1rem; margin-bottom: 0.5rem;">-</div>
+                    <p class="microcopy">Merupakan mayoritas pengunjung</p>
+                </div>
+            </div>
+
+            <!-- Visualisasi Grafik Batang (Chart.js) -->
+            <div class="card mb-loose mx-auto" style="max-width: 800px; padding: 2rem; position: relative; height: 350px;">
+                <canvas id="clicksChart"></canvas>
+            </div>
+
+            <!-- Rincian Statistik per Platform -->
+            <h3 class="mb-loose" style="margin-top: 4rem;">Rincian Data per Platform</h3>
+            <div class="grid-3 mb-loose" id="stats-details">
+                <!-- Konten Kartu Platform Akan Dirender Secara Dinamis Lewat Javascript di bawah -->
+            </div>
+
+            <!-- Tombol Reset -->
+            <div style="margin-top: 4rem;">
+                <button id="btn-reset" class="btn btn-outline" style="border-color: #ef4444; color: #ef4444;">
+                    <i class="ph ph-trash"></i> Hapus Semua Data Lokal
+                </button>
+                <p class="microcopy" style="margin-top: 10px;">Menghapus rekaman simulasi yang ada di browser ini.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center" style="padding: 2rem 0;">
+        <p class="microcopy">&copy; 2026 @serverheru/Lalu Hairul Umam. Hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Definisi Platform yang ada di index.html
+            const platforms = [
+                { id: 'googleplay', name: 'Google Play', icon: 'ph-google-play-logo' },
+                { id: 'apkpure', name: 'APKPure', icon: 'ph-android-logo' },
+                { id: 'uptodown', name: 'Uptodown', icon: 'ph-storefront' },
+                { id: 'github', name: 'GitHub', icon: 'ph-github-logo' },
+                { id: 'mediafire', name: 'MediaFire (Full)', icon: 'ph-download-simple' },
+                { id: 'mediafiredemo', name: 'MediaFire (Demo)', icon: 'ph-download-simple' }
+            ];
+
+            let totalClicks = 0;
+            let maxClicks = 0;
+            let favoritePlatform = "-";
+            const detailsContainer = document.getElementById('stats-details');
+
+            // Array untuk menyimpan data yang akan diumpankan ke Chart.js
+            const chartLabels = [];
+            const chartData = [];
+
+            platforms.forEach(platform => {
+                // Ambil nilai dari local storage, jika tidak ada default 0
+                const count = parseInt(localStorage.getItem(`click_${platform.id}`) || 0);
+                totalClicks += count;
+
+                // Masukkan nama platform dan jumlah klik ke dalam array chart
+                chartLabels.push(platform.name);
+                chartData.push(count);
+
+                // Mencari platform mana dengan klik tertinggi
+                if (count > maxClicks) {
+                    maxClicks = count;
+                    favoritePlatform = platform.name;
+                }
+
+                // Membangun elemen kartu kecil untuk masing-masing platform
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3 style="font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 0.5rem;"><i class="ph ${platform.icon}"></i> ${platform.name}</h3>
+                    <div style="font-size: 2.2rem; font-weight: 700; color: var(--primary);">${count}</div>
+                    <p class="microcopy">Jumlah Klik</p>
+                `;
+                detailsContainer.appendChild(card);
+            });
+
+            // Memperbarui UI Ringkasan (Bagian Atas)
+            const totalElement = document.getElementById('stat-total');
+            
+            // Fungsi Animasi Counter-Up
+            const animateValue = (element, start, end, duration) => {
+                if (end === 0) {
+                    element.textContent = 0;
+                    return;
+                }
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    // Efek ease-out (melambat di akhir)
+                    const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                    element.textContent = Math.floor(easeOutProgress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        element.textContent = end; // Memastikan angka akhir akurat
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            // Panggil animasi dengan durasi 1.5 detik (1500ms)
+            animateValue(totalElement, 0, totalClicks, 1500);
+
+            document.getElementById('stat-favorite').textContent = totalClicks > 0 ? favoritePlatform : "Belum Ada Data";
+
+            // --- Inisialisasi Chart.js ---
+            const ctx = document.getElementById('clicksChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar', // Bisa diubah ke 'doughnut' atau 'pie' jika ingin diagram lingkaran
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        label: 'Jumlah Unduhan',
+                        data: chartData,
+                        // Warna bar disesuaikan dengan warna primary Anda (#818cf8)
+                        backgroundColor: 'rgba(129, 140, 248, 0.8)', 
+                        borderColor: '#818cf8',
+                        borderWidth: 1,
+                        borderRadius: 6 // Memberikan efek melengkung modern di atas batang
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false } // Sembunyikan legenda karena hanya ada 1 tipe data
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { 
+                                color: '#cbd5e1', // Warna teks axis Y agar terlihat di dark mode
+                                stepSize: 1 
+                            },
+                            grid: { 
+                                color: 'rgba(255, 255, 255, 0.1)' // Garis panduan tipis
+                            }
+                        },
+                        x: {
+                            ticks: { color: '#cbd5e1' },
+                            grid: { display: false } // Hilangkan grid vertikal agar lebih bersih
+                        }
+                    }
+                }
+            });
+
+            // Logika untuk tombol hapus
+            document.getElementById('btn-reset').addEventListener('click', () => {
+                if (confirm('Yakin ingin mereset semua data statistik lokal? (Data akan kembali menjadi 0)')) {
+                    platforms.forEach(p => localStorage.removeItem(`click_${p.id}`));
+                    location.reload(); // Segarkan halaman agar UI diperbarui
+                }
+            });
+        });
+    </script>
+</body>
+</html>

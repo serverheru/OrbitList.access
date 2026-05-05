@@ -63,4 +63,28 @@ document.addEventListener("DOMContentLoaded", () => {
         featurePrevBtn.addEventListener('click', () => featureCarousel.scrollBy({ left: -getFeatureScrollAmount(), behavior: 'smooth' }));
         featureNextBtn.addEventListener('click', () => featureCarousel.scrollBy({ left: getFeatureScrollAmount(), behavior: 'smooth' }));
     }
+
+    // Ambil semua tombol yang memiliki atribut data-platform
+    const downloadButtons = document.querySelectorAll('[data-platform]');
+
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let platform = button.getAttribute('data-platform');
+            if (!platform) return;
+
+            // Tambah angka klik ke LocalStorage
+            let currentCount = parseInt(localStorage.getItem(`click_${platform}`) || 0);
+            currentCount++;
+            localStorage.setItem(`click_${platform}`, currentCount);
+
+            console.log(`[Analytics] Download button clicked: ${platform} (${currentCount} kali)`);
+
+            // Contoh implementasi untuk Google Analytics (GA4)
+            if (typeof gtag === 'function') {
+                gtag('event', 'download_click', {
+                    'platform_name': platform
+                });
+            }
+        });
+    });
 });
