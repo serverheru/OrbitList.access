@@ -132,11 +132,11 @@ img {
 .btn-apkpure { background-color: #24d18c; color: #fff; box-shadow: 0 4px 14px 0 rgba(36, 209, 140, 0.3); }
 .btn-apkpure:hover { background-color: #1eb87b; transform: translateY(-2px); color: #fff; }
 
-.btn-uptodown { background-color: #00b899; color: #fff; box-shadow: 0 4px 14px 0 rgba(0, 184, 153, 0.3); }
+.btn-uptodown { background-color: #147bdc; color: #fff; box-shadow: 0 4px 14px 0 rgba(0, 184, 153, 0.3); }
 .btn-uptodown:hover { background-color: #009e83; transform: translateY(-2px); color: #fff; }
 
-.btn-mediafire { background-color: #1289F8; color: #fff; box-shadow: 0 4px 14px 0 rgba(18, 137, 248, 0.3); }
-.btn-mediafire:hover { background-color: #0b76db; transform: translateY(-2px); color: #fff; }
+.btn-mediafire { background-color: #0c6ba6; color: #fff; box-shadow: 0 4px 14px 0 rgba(18, 137, 248, 0.3); }
+.btn-mediafire:hover { background-color: #0c7cb0; transform: translateY(-2px); color: #fff; }
 
 /* Tombol "Coming Soon" */
 .btn-googleplay { background-color: #fff; color: #333; box-shadow: 0 4px 14px 0 rgba(0,0,0, 0.1); }
