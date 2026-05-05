@@ -125,6 +125,39 @@ img {
     font-size: 1.1rem;
 }
 
+/* Store Buttons */
+.btn-github { background-color: #24292e; color: #fff; box-shadow: 0 4px 14px 0 rgba(0,0,0, 0.3); }
+.btn-github:hover { background-color: #2f363d; transform: translateY(-2px); color: #fff; }
+
+.btn-apkpure { background-color: #24d18c; color: #fff; box-shadow: 0 4px 14px 0 rgba(36, 209, 140, 0.3); }
+.btn-apkpure:hover { background-color: #1eb87b; transform: translateY(-2px); color: #fff; }
+
+.btn-uptodown { background-color: #0f6cff; color: #fff; box-shadow: 0 4px 14px 0 rgba(15, 108, 255, 0.3); }
+.btn-uptodown:hover { background-color: #0056e0; transform: translateY(-2px); color: #fff; }
+
+/* Donation Button (Gold Glow) */
+.btn-donate {
+    background-color: rgba(251, 191, 36, 0.1);
+    color: #fcd34d;
+    border: 1px solid #fbbf24;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+}
+.btn-donate:hover {
+    background-color: #fbbf24;
+    color: #070616;
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
+    transform: translateY(-2px);
+}
+.btn-donate i { font-size: 1.2rem; }
+
+@keyframes pulse-gold {
+    0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(251, 191, 36, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+}
+.pulse-anim { animation: pulse-gold 2s infinite; }
+
+
 /* Navbar */
 .navbar {
     padding: 1rem 0; /* Diperkecil agar header tidak memakan tempat */
@@ -149,6 +182,12 @@ img {
     font-weight: 800;
     font-size: 1.2rem;
     color: var(--dark);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .app-icon {
@@ -219,13 +258,7 @@ img {
 }
 
 /* Cards Grid */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Disesuaikan untuk mobile */
-    gap: 2rem;
-}
-
-.grid-2 {
+.grid-2, .grid-3, .grid-4 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Disesuaikan untuk mobile */
     gap: 2rem;
@@ -334,6 +367,87 @@ img {
     object-fit: contain;
 }
 
+/* Gallery Wrapper & Navigation Buttons */
+.gallery-wrapper {
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.gallery-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn, .feature-prev-btn { left: -24px; }
+.next-btn, .feature-next-btn { right: -24px; }
+
+/* Horizontal Scroll / Carousel for Gallery */
+.gallery-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0 2rem 0; /* Padding agar shadow gambar tidak terpotong */
+    scroll-snap-type: x mandatory; /* Efek magnet saat digeser */
+    scrollbar-width: thin; /* Untuk Firefox */
+    scrollbar-color: var(--primary) rgba(255, 255, 255, 0.05);
+}
+
+.gallery-carousel::-webkit-scrollbar {
+    height: 8px; /* Tinggi scrollbar horizontal */
+}
+
+.gallery-carousel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.gallery-carousel::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.gallery-carousel .gallery-img {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    max-width: 85vw; /* Di HP, ukuran 85% agar gambar sebelahnya sedikit 'mengintip' (UX yang baik) */
+}
+
+/* Aturan untuk CARD di dalam carousel */
+.gallery-carousel > .card {
+    flex: 0 0 90%; /* Untuk card di dalam carousel, buat lebarnya 90% di mobile */
+    scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+    .gallery-carousel > .card {
+        flex-basis: 380px; /* Di desktop, beri lebar tetap agar tidak terlalu besar */
+    }
+    /* Menghapus batasan lebar pada gambar galeri di desktop agar terlihat lebih baik */
+    .gallery-carousel .gallery-img {
+        max-width: none;
+    }
+}
+
 /* Developer Profile Avatar */
 .dev-avatar {
     width: 120px;
@@ -342,6 +456,16 @@ img {
     object-fit: cover;
     border: 3px solid var(--primary);
     box-shadow: 0 10px 25px rgba(129, 140, 248, 0.3);
+    display: block;
+}
+
+/* Agency/Indie Studio Avatar */
+.agency-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px; /* Sudut melengkung, bukan lingkaran penuh */
+    object-fit: contain; /* Agar logo tidak terpotong */
+    border: 3px solid rgba(255, 255, 255, 0.1);
     display: block;
 }
 
@@ -404,7 +528,13 @@ img {
     .section { padding: 3rem 0; }
     .navbar .btn { padding: 8px 16px; font-size: 0.9rem; }
     .logo { font-size: 1.1rem; }
-    .grid-3, .grid-2 { gap: 1.5rem; }
+    
+    /* Memaksa 1 kolom di HP agar konten tidak tumpang tindih */
+    .grid-2, .grid-3, .grid-4 { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
+    
     .card { padding: 1.5rem; }
     .icon-wrapper {
         width: 100px;
@@ -416,6 +546,15 @@ img {
         width: 80px;
         height: 80px;
     }
+    
+    /* Menyesuaikan area Carousel di HP (Hapus kotak luar, gunakan native swipe) */
+    .gallery-wrapper { padding: 0.5rem 0; border: none; box-shadow: none; background: transparent; backdrop-filter: none; }
+    .gallery-btn { display: none; /* Sembunyikan tombol panah, diganti dengan scroll sentuh */ }
+
+    /* Sembunyikan Scrollbar di HP agar terlihat bersih seperti aplikasi asli */
+    .gallery-carousel { scrollbar-width: none; }
+    .gallery-carousel::-webkit-scrollbar { display: none; }
+    
     .final-cta .btn-large {
         width: 100%;
         font-size: 1rem;
@@ -425,6 +564,16 @@ img {
 
 /* Extra Responsive for very narrow screens */
 @media (max-width: 480px) {
+    /* Sembunyikan teks tertentu di layar sempit agar header tidak penuh */
+    .hide-mobile { display: none; }
+
+    /* Penyesuaian tipografi dan bantalan untuk layar yang sangat sempit */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.15rem; }
+    .section { padding: 2.5rem 0; }
+    .card { padding: 1.25rem; }
+
     .hero-cta .btn, .final-cta .btn-large {
         font-size: 0.85rem; /* Ukuran font lebih kecil lagi untuk layar ramping */
         padding: 8px 12px; /* Padding atas-bawah dikurangi agar tombol tidak tebal */
@@ -436,5 +585,11 @@ img {
     .navbar .btn {
         font-size: 0.8rem; /* Tombol navbar juga dirampingkan */
         padding: 6px 12px;
+    }
+}
+
+@media (min-width: 769px) {
+    .gallery-carousel {
+        justify-content: center; /* Posisikan otomatis ke tengah jika di PC/Laptop */
     }
 }

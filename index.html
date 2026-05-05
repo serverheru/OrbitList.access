@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070616">
     <title>OrbitList - Ambil Alih Waktumu, Bukan Sebaliknya</title>
 
     <!-- Primary Meta Tags -->
@@ -32,7 +33,12 @@
                 <img src="img/Iconapp.png" alt="OrbitList Icon" class="app-icon">
                 <span>OrbitList</span>
             </div>
-            <a href="#cta" class="btn btn-outline">Coba Sekarang!</a>
+            
+            <div class="nav-actions">
+                <a href="https://sociabuzz.com/serverheru/tribe" target="_blank" rel="noopener" class="btn btn-donate" title="Support Developer via Sociabuzz">
+                    <i class="ph ph-coffee"></i> <span class="hide-mobile">Support Dev</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -44,12 +50,12 @@
                 <p class="subtitle">Fokus pada hal penting, biarkan OrbitList mengatur sisanya. Kelola tugas dan deadline.</p>
                 <div class="hero-cta">
                     <a href="#cta" class="btn btn-primary">Mulai Rapikan Jadwalmu (Gratis)</a>
-                    <span class="microcopy">Ukuran file: 11.93mb. Gunakan sepuasnya.</span>
+                    <span class="microcopy">Versi v1.0 • Ukuran: 12.99 MB (Full) / 11.93 MB (Demo)</span>
                 </div>
             </div><br><br>
             <div class="hero-image">
                 <!-- Screenshot Utama -->
-                <img src="img/Launcher.png" alt="Tampilan Aplikasi OrbitList" class="app-screenshot">
+                <img src="img/1.png" alt="Tampilan Aplikasi OrbitList" class="app-screenshot">
             </div>
         </div>
     </header>
@@ -95,72 +101,76 @@
                 <p class="max-w-copy mx-auto">OrbitList adalah aplikasi manajemen tugas futuristik yang menggabungkan estetika <em>cyberpunk</em> dengan fungsionalitas cerdas untuk menjaga produktivitas Anda tetap dalam "orbit" yang sempurna.</p>
             </div>
 
-            <div class="grid-2">
-                <!-- Category 1 -->
-                <div class="card">
-                    <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
-                        <i class="ph ph-palette" style="color: var(--primary); font-size: 1.4rem;"></i> 1. Quantum UI & Experience
-                    </h3>
-                    <ul class="feature-list">
-                        <li><strong>Aesthetic Cyberpunk Design:</strong> Antarmuka gelap dengan aksen neon yang memberikan pengalaman visual premium.</li>
-                        <li><strong>Glassmorphism UI:</strong> Penggunaan kartu transparan dengan efek <em>glow</em> dinamis yang berubah sesuai progres tugas.</li>
-                        <li><strong>Multi-Phase Splash Screen:</strong> Pembukaan aplikasi yang elegan dengan transisi logo profesional.</li>
-                        <li><strong>Customizable Glow Themes:</strong> Pilih tema warna utama (Biru, Kuning, atau Hijau) yang menyesuaikan seluruh nuansa cahaya aplikasi.</li>
-                        <li><strong>Interactive Onboarding:</strong> Panduan selamat datang yang membantu pengguna baru memahami filosofi "Orbit".</li>
-                    </ul>
-                </div>
+            <div class="card gallery-wrapper">
+                <button class="gallery-btn feature-prev-btn" aria-label="Geser Kiri"><i class="ph ph-caret-left"></i></button>
+                <div class="gallery-carousel" id="featureCarousel">
+                    <!-- Category 1 -->
+                    <div class="card">
+                        <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
+                            <i class="ph ph-palette" style="color: var(--primary); font-size: 1.4rem;"></i> 1. Quantum UI & Experience
+                        </h3>
+                        <ul class="feature-list">
+                            <li><strong>Aesthetic Cyberpunk Design:</strong> Antarmuka gelap dengan aksen neon yang memberikan pengalaman visual premium.</li>
+                            <li><strong>Glassmorphism UI:</strong> Penggunaan kartu transparan dengan efek <em>glow</em> dinamis yang berubah sesuai progres tugas.</li>
+                            <li><strong>Multi-Phase Splash Screen:</strong> Pembukaan aplikasi yang elegan dengan transisi logo profesional.</li>
+                            <li><strong>Customizable Glow Themes:</strong> Pilih tema warna utama (Biru, Kuning, atau Hijau) yang menyesuaikan seluruh nuansa cahaya aplikasi.</li>
+                            <li><strong>Interactive Onboarding:</strong> Panduan selamat datang yang membantu pengguna baru memahami filosofi "Orbit".</li>
+                        </ul>
+                    </div>
 
-                <!-- Category 2 -->
-                <div class="card">
-                    <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
-                        <i class="ph ph-planet" style="color: var(--primary); font-size: 1.4rem;"></i> 2. Manajemen Misi (Smart Tasking)
-                    </h3>
-                    <ul class="feature-list">
-                        <li><strong>Triple Orbit Zones (Tabs):</strong> Harian, Mingguan, dan Agenda.</li>
-                        <li><strong>Sistem Orbit Berulang:</strong> Tugas rutin otomatis dijadwalkan ulang ke siklus berikutnya setelah selesai.</li>
-                        <li><strong>Time-Lock System:</strong> Ikon gembok cerdas yang mencegah penyelesaian tugas sebelum waktu yang ditentukan tiba.</li>
-                        <li><strong>High-Detail Missions:</strong> Mendukung nama tugas, deskripsi panjang, dan prioritas (Rendah, Sedang, Tinggi).</li>
-                        <li><strong>Emoji & Attachment:</strong> Personalisasi setiap misi dengan emoji ikonik dan simpan URL langsung di dalam detail misi.</li>
-                    </ul>
-                </div>
+                    <!-- Category 2 -->
+                    <div class="card">
+                        <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
+                            <i class="ph ph-planet" style="color: var(--primary); font-size: 1.4rem;"></i> 2. Manajemen Misi (Smart Tasking)
+                        </h3>
+                        <ul class="feature-list">
+                            <li><strong>Triple Orbit Zones (Tabs):</strong> Harian, Mingguan, dan Agenda.</li>
+                            <li><strong>Sistem Orbit Berulang:</strong> Tugas rutin otomatis dijadwalkan ulang ke siklus berikutnya setelah selesai.</li>
+                            <li><strong>Time-Lock System:</strong> Ikon gembok cerdas yang mencegah penyelesaian tugas sebelum waktu yang ditentukan tiba.</li>
+                            <li><strong>High-Detail Missions:</strong> Mendukung nama tugas, deskripsi panjang, dan prioritas (Rendah, Sedang, Tinggi).</li>
+                            <li><strong>Emoji & Attachment:</strong> Personalisasi setiap misi dengan emoji ikonik dan simpan URL langsung di dalam detail misi.</li>
+                        </ul>
+                    </div>
 
-                <!-- Category 3 -->
-                <div class="card">
-                    <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
-                        <i class="ph ph-chart-polar" style="color: var(--primary); font-size: 1.4rem;"></i> 3. Analitik & Dashboard
-                    </h3>
-                    <ul class="feature-list">
-                        <li><strong>Progress Rhythm Circle:</strong> Indikator visual melingkar yang menunjukkan persentase keberhasilan harian secara real-time.</li>
-                        <li><strong>Workload Meter:</strong> Sensor beban kerja yang mendeteksi tingkat kepadatan tugas berdasarkan jumlah dan prioritas misi.</li>
-                        <li><strong>Consistency Streak:</strong> Pelacak hari berturut-turut di mana pengguna berhasil menyelesaikan seluruh rutinitas harian.</li>
-                        <li><strong>Flight Log (Statistics):</strong> Grafik batang distribusi tugas, indikator efisiensi mingguan, dan deteksi misi kritis.</li>
-                    </ul>
-                </div>
+                    <!-- Category 3 -->
+                    <div class="card">
+                        <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
+                            <i class="ph ph-chart-polar" style="color: var(--primary); font-size: 1.4rem;"></i> 3. Analitik & Dashboard
+                        </h3>
+                        <ul class="feature-list">
+                            <li><strong>Progress Rhythm Circle:</strong> Indikator visual melingkar yang menunjukkan persentase keberhasilan harian secara real-time.</li>
+                            <li><strong>Workload Meter:</strong> Sensor beban kerja yang mendeteksi tingkat kepadatan tugas berdasarkan jumlah dan prioritas misi.</li>
+                            <li><strong>Consistency Streak:</strong> Pelacak hari berturut-turut di mana pengguna berhasil menyelesaikan seluruh rutinitas harian.</li>
+                            <li><strong>Flight Log (Statistics):</strong> Grafik batang distribusi tugas, indikator efisiensi mingguan, dan deteksi misi kritis.</li>
+                        </ul>
+                    </div>
 
-                <!-- Category 4 -->
-                <div class="card">
-                    <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
-                        <i class="ph ph-bell-ringing" style="color: var(--primary); font-size: 1.4rem;"></i> 4. Sistem Alert & Pengingat
-                    </h3>
-                    <ul class="feature-list">
-                        <li><strong>Triple-Phase Notifications:</strong> Pengingat otomatis pada 1 jam sebelumnya, 5 menit sebelumnya, dan tepat saat waktu tiba.</li>
-                        <li><strong>Daily Briefing Report:</strong> Notifikasi subuh (jam 04:00) yang memberikan ringkasan seluruh misi yang harus diselesaikan hari itu.</li>
-                        <li><strong>Custom Notification Sound:</strong> Kebebasan memilih nada dering dari perangkat untuk setiap alarm tugas.</li>
-                    </ul>
+                    <!-- Category 4 -->
+                    <div class="card">
+                        <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
+                            <i class="ph ph-bell-ringing" style="color: var(--primary); font-size: 1.4rem;"></i> 4. Sistem Alert & Pengingat
+                        </h3>
+                        <ul class="feature-list">
+                            <li><strong>Triple-Phase Notifications:</strong> Pengingat otomatis pada 1 jam sebelumnya, 5 menit sebelumnya, dan tepat saat waktu tiba.</li>
+                            <li><strong>Daily Briefing Report:</strong> Notifikasi subuh (jam 04:00) yang memberikan ringkasan seluruh misi yang harus diselesaikan hari itu.</li>
+                            <li><strong>Custom Notification Sound:</strong> Kebebasan memilih nada dering dari perangkat untuk setiap alarm tugas.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Category 5 -->
+                    <div class="card">
+                        <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
+                            <i class="ph ph-faders" style="color: var(--primary); font-size: 1.4rem;"></i> 5. Operasi & Fleksibilitas
+                        </h3>
+                        <ul class="feature-list">
+                            <li><strong>Custom Categories:</strong> Tambah, edit, atau hapus kategori misi sesuai gaya hidup.</li>
+                            <li><strong>Drag-and-Drop Reordering:</strong> Susun ulang prioritas tugas secara visual dengan menekan lama dan menggeser.</li>
+                            <li><strong>Pinning System:</strong> Sematkan misi vital agar selalu berada di posisi teratas daftar orbit.</li>
+                            <li><strong>Galaxy Search & Manual:</strong> Fitur pencarian cepat, panduan operasi lengkap, dan akses cepat ke pusat ekosistem OrbitList.</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <!-- Category 5 -->
-                <div class="card" style="grid-column: 1 / -1;">
-                    <h3 class="mb-tight" style="display: flex; align-items: center; gap: 8px;">
-                        <i class="ph ph-faders" style="color: var(--primary); font-size: 1.4rem;"></i> 5. Operasi & Fleksibilitas (System Settings)
-                    </h3>
-                    <ul class="feature-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 2rem;">
-                        <li><strong>Custom Categories:</strong> Tambah, edit, atau hapus kategori misi sesuai gaya hidup.</li>
-                        <li><strong>Drag-and-Drop Reordering:</strong> Susun ulang prioritas tugas secara visual dengan menekan lama dan menggeser.</li>
-                        <li><strong>Pinning System:</strong> Sematkan misi vital agar selalu berada di posisi teratas daftar orbit.</li>
-                        <li><strong>Galaxy Search & Manual:</strong> Fitur pencarian cepat, panduan operasi lengkap, dan akses cepat ke pusat ekosistem OrbitList.</li>
-                    </ul>
-                </div>
+                <button class="gallery-btn feature-next-btn" aria-label="Geser Kanan"><i class="ph ph-caret-right"></i></button>
             </div>
             
             <div class="text-center" style="margin-top: 3rem;">
@@ -175,10 +185,23 @@
     <section class="gallery section fade-in">
         <div class="container text-center">
             <h2 class="mb-loose">Lebih Dekat dengan OrbitList</h2>
-            <div class="grid-3">
-                <img src="img/List.png" alt="List App" class="gallery-img">
-                <img src="img/Menu.png" alt="Menu App" class="gallery-img">
-                <img src="img/Input.png" alt="Input Task" class="gallery-img">
+
+            <!-- Carousel dibungkus dalam Card dengan tombol geser -->
+            <div class="card gallery-wrapper">
+                <button class="gallery-btn prev-btn" aria-label="Geser Kiri"><i class="ph ph-caret-left"></i></button>
+                
+                <div class="gallery-carousel" id="galleryCarousel">
+                    <img src="img/a.png" alt="OrbitList Screenshot 1" class="gallery-img">
+                    <img src="img/b.png" alt="OrbitList Screenshot 2" class="gallery-img">
+                    <img src="img/c.png" alt="OrbitList Screenshot 3" class="gallery-img">
+                    <img src="img/d.png" alt="OrbitList Screenshot 4" class="gallery-img">
+                    <img src="img/e.png" alt="OrbitList Screenshot 5" class="gallery-img">
+                    <img src="img/f.png" alt="OrbitList Screenshot 6" class="gallery-img">
+                    <img src="img/g.png" alt="OrbitList Screenshot 7" class="gallery-img">
+                    <img src="img/h.png" alt="OrbitList Screenshot 8" class="gallery-img">
+                </div>
+
+                <button class="gallery-btn next-btn" aria-label="Geser Kanan"><i class="ph ph-caret-right"></i></button>
             </div>
         </div>
     </section>
@@ -187,11 +210,30 @@
     <section class="developer section fade-in">
         <div class="container text-center">
             <h2 class="mb-loose">Dikembangkan Oleh</h2>
-            <div class="card max-w-copy mx-auto">
-                <img src="img/Profile.jpeg" alt="Lalu Hairul Umam" class="dev-avatar mb-tight mx-auto">
-                <h3>Lalu Hairul Umam</h3>
-                <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">@serverheru <br> [Lombok NTB, Praya Barat]</p>
-                <p>Seorang mahasiswa Perpustakaan dan Sains Informasi, minat di bidang Software Engineer, Web/App Dev, Data Science, Data Analyst, dan Data Engineer.</p>
+            
+            <div class="grid-2 mx-auto" style="max-width: 850px;">
+                <!-- Profil Developer (Kiri) -->
+                <div class="card">
+                    <img src="img/Profile.jpeg" alt="Lalu Hairul Umam" class="dev-avatar mb-tight mx-auto">
+                    <h3>Lalu Hairul Umam</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">@serverheru <br> [Lombok NTB, Praya Barat]</p>
+                    <p>Seorang mahasiswa Perpustakaan dan Sains Informasi, minat di bidang Software Engineer, Web/App Dev, Data Science, Data Analyst, dan Data Engineer.</p>
+                </div>
+
+                <!-- Profil Agensi / Indie Studio (Kanan) -->
+                <div class="card">
+                    <img src="img/2.png" alt="Heruvant Studio" class="agency-avatar mb-tight mx-auto">
+                    <h3>Heruvant Studio</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Ruang Eksperimen Indie</p>
+                    <p>Bukan perusahaan besar, hanya sebuah "laboratorium" kecil tempat saya belajar coding, bereksperimen, dan meracik aplikasi dari nol. Tujuannya simpel: membuat alat yang ringan, gratis, dan benar-benar berguna buat keseharian kita.</p>
+                </div>
+            </div>
+            
+            <!-- Donation Button at Developer Section -->
+            <div class="text-center fade-in" style="margin-top: 3rem;">
+                <a href="https://sociabuzz.com/serverheru/tribe" target="_blank" rel="noopener" class="btn btn-donate btn-large pulse-anim">
+                    <i class="ph ph-coffee" style="font-size: 1.5rem;"></i> Traktir Kopi untuk Update Selanjutnya!
+                </a>
             </div>
         </div>
     </section>
@@ -201,10 +243,30 @@
         <div class="container text-center">
             <h2>Siap buat hidup lebih santai tapi tetap produktif?</h2>
             <p class="max-w-copy mx-auto mb-loose">Berhenti menyimpan beban tugas di kepalamu. Mulai bangun sistem kerjamu sendiri sekarang dan dapatkan ketenangan pikiran.</p>
-            <a href="https://www.mediafire.com/file/9b2qwo3ach1iqhj/OrbitList.apk/file" class="btn btn-primary btn-large" target="_blank" rel="noopener">
-                <img src="https://cdn.simpleicons.org/mediafire/white" alt="MediaFire Logo" style="width: 24px; height: 24px;">
-                Coba OrbitList Sekarang (Gratis)
-            </a>
+            
+            <!-- Tombol Full Release -->
+            <div class="download-group" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <a href="https://apkpure.com/id/" class="btn btn-large btn-apkpure" target="_blank" rel="noopener">
+                    <i class="ph ph-android-logo" style="font-size: 1.5rem;"></i> Unduh via APKPure
+                </a>
+                <a href="https://id.uptodown.com/" class="btn btn-large btn-uptodown" target="_blank" rel="noopener">
+                    <i class="ph ph-storefront" style="font-size: 1.5rem;"></i> Unduh via Uptodown
+                </a>
+                 <a href="https://github.com/serverheru/asset/releases/download/v1.0/OrbitList.1.0.apk" class="btn btn-large btn-github"
+                    target="_blank" rel="noopener">
+                    <i class="ph ph-github-logo" style="font-size: 1.5rem;"></i> Unduh via GitHub
+                </a>
+            </div>
+            <p class="microcopy mb-loose">Full Version (v1.0) • Ukuran: 12.99 MB</p>
+
+            <!-- Tombol Versi Demo -->
+            <div style="margin-top: 1rem;">
+                <a href="https://www.mediafire.com/file/9b2qwo3ach1iqhj/OrbitList.apk/file" class="btn btn-outline" target="_blank" rel="noopener" style="font-size: 0.9rem; padding: 8px 16px;">
+                    <img src="https://cdn.simpleicons.org/mediafire/white" alt="MediaFire Logo" style="width: 16px; height: 16px; opacity: 0.8;">
+                    Versi Demo (MediaFire)
+                </a>
+                <p class="microcopy" style="margin-top: 0.5rem;">Demo Version (v1.0) • Ukuran: 11.93 MB</p>
+            </div>
             
             <!-- Keterangan Aplikasi Gratis & Aman -->
             <p class="microcopy" style="margin-top: 1.5rem;"><i class="ph ph-shield-check" style="font-size: 1.2rem; vertical-align: middle;"></i> Aplikasi ini 100% gratis, aman, dan tidak akan mengambil data pribadi Anda.</p>
@@ -219,6 +281,13 @@
                 <span>OrbitList</span>
             </div>
             <p class="microcopy">Dibuat dengan ☕ dan banyak begadang, supaya kamu nggak perlu ikutan begadang.</p>
+            
+            <div style="margin: 1.5rem 0;">
+                <a href="https://sociabuzz.com/serverheru/tribe" target="_blank" rel="noopener" class="btn btn-donate" style="font-size: 0.9rem; padding: 8px 16px;">
+                    <i class="ph ph-hand-heart" style="font-size: 1.2rem;"></i> Dukung Pengembangan OrbitList
+                </a>
+            </div>
+            
             <p class="microcopy">&copy; 2026 @serverheru/Lalu Hairul Umam. Hak cipta dilindungi.</p>
             
             <!-- Navigasi Bawah / Legal Links -->
