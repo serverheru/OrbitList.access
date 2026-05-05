@@ -246,6 +246,60 @@ img {
     color: var(--text);
 }
 
+/* Feature List */
+.feature-list {
+    list-style: none;
+    text-align: left;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.feature-list li::before {
+    content: '•';
+    color: var(--primary);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -6px;
+}
+
+.feature-list strong {
+    color: var(--dark);
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    text-align: left;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.feature-list li::before {
+    content: '•';
+    color: var(--primary);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -6px;
+}
+
+.feature-list strong {
+    color: var(--dark);
+}
+
 .benefit-item {
     text-align: center;
     padding: 1.5rem 0.5rem;
