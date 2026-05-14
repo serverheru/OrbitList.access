@@ -132,21 +132,8 @@ img {
 .btn-apkpure { background-color: #24d18c; color: #fff; box-shadow: 0 4px 14px 0 rgba(36, 209, 140, 0.3); }
 .btn-apkpure:hover { background-color: #1eb87b; transform: translateY(-2px); color: #fff; }
 
-.btn-uptodown { background-color: #147bdc; color: #fff; box-shadow: 0 4px 14px 0 rgba(0, 184, 153, 0.3); }
-.btn-uptodown:hover { background-color: #1873cd; transform: translateY(-2px); color: #fff; }
-
 .btn-mediafire { background-color: #003ef7; color: #fff; box-shadow: 0 4px 14px 0 rgba(18, 137, 248, 0.3); }
 .btn-mediafire:hover { background-color: #0e41cf; transform: translateY(-2px); color: #fff; }
-
-/* Tombol "Coming Soon" */
-.btn-googleplay { background-color: #fff; color: #333; box-shadow: 0 4px 14px 0 rgba(0,0,0, 0.1); }
-.btn-googleplay:hover { background-color: #f5f5f5; color: #333; }
-
-.btn-soon {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none; /* Mencegah tombol bisa diklik atau di-hover */
-}
 
 /* Donation Button (Gold Glow) */
 .btn-donate {
